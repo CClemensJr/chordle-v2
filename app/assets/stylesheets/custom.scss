@@ -2,11 +2,17 @@
 @import "bootstrap";
 
 /* variables */
-$dark-gray: #555;
+$dark-gray:  #555;
 $light-gray: #777;
-$white: #fff;
-$off-white: #eaeaea;
-$brown: #222;
+$white:      #fff;
+$off-white:  #eaeaea;
+$brown:      #222;
+
+@mixin box-sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 
 /* universal */
 
@@ -38,23 +44,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size:       3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom:   30px;
+  text-align:      center;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size:       1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $light-gray;
+  margin-bottom:   30px;
+  text-align:      center;
+  font-weight:     normal;
+  color:          $light-gray;
 }
 
 p {
-  font-size: 1.1em;
+  font-size:   1.1em;
   line-height: 1.7em;
 }
 
@@ -63,17 +69,17 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: $white;
-  text-transform: uppercase;
+  margin-right:    10px;
+  font-size:       1.7em;
+  color:          $white;
+  text-transform:  uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
+  padding-top:     9px;
+  font-weight:     bold;
 }
 
 #logo:hover {
-  color: $white;
+  color:          $white;
   text-decoration: none;
 }
 
@@ -85,7 +91,7 @@ footer {
   padding-top: 5px;
   border-top:  1px solid $off-white;
   
-  color: $light-gray;
+  color:      $light-gray;
 
   a { 
     color: $dark-gray;
@@ -106,24 +112,13 @@ footer {
   }
 }
 
-/*footer a {
-  color: $dark-gray;
-}
 
-footer a:hover {
-  color: $brown;
-}
+/*  Misc */
+.debug_dump {
+  clear:      both;
+  float:      left;
+  width:      100%;
+  margin-top: 45px;
 
-footer small {
-  float: left;
+  @include box-sizing;
 }
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}*/
