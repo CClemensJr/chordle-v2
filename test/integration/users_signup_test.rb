@@ -25,4 +25,23 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     #Make sure there is an element for the actual error message
     assert_select 'div.field_with_errors'
   end
+
+
+  test "valid signup information" do
+    get signup_path
+
+    assert_difference 'User.count', 1 do
+      assert_select 'form[action="/signup"]'
+
+      post signup_path, params: { user: { name:                  "User Name",
+                                          email:                 "user@valid.com",
+                                          password:              "passwords",
+                                          password_confirmation: "passwords" } }
+    end
+
+    follow_redirect!
+    assert_template 'users/show'
+    #assert flash.alert[:success]
+    #assert_not flash.alert[:danger]
+  end
 end
