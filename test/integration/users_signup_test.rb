@@ -12,7 +12,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       assert_select 'form[action="/signup"]'
 
       #With invalid parameters
-      post signup_path, params: { user: { name:                  "",
+      post users_path, params: { user: { name:                  "",
                                           email:                 "user@invalid",
                                           password:              "pass",
                                           password_confirmation: "word"} }
@@ -33,7 +33,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_difference 'User.count', 1 do
       assert_select 'form[action="/signup"]'
 
-      post signup_path, params: { user: { name:                  "User Name",
+      post users_path, params: { user: { name:                  "User Name",
                                           email:                 "user@valid.com",
                                           password:              "passwords",
                                           password_confirmation: "passwords" } }
@@ -42,5 +42,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'users/show'
     assert_not flash.nil?
+    assert is_logged_in?
   end
 end
