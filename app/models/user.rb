@@ -18,4 +18,16 @@ class User < ApplicationRecord
     validates :password, 
               presence: true, 
               length:   { minimum: 9 }
+
+    # Returns the hash digest of a string argument
+    def User.digest(string)
+        # Cost is the variable that BCrypt uses to determin how complex to make the password digest. 
+        # Here we are assigning the lowest value to cost as possible to speed up testing.
+        # The value of cost is the minimum cost if it is actually the minimum cost otherwise assign the value of Engine.cost
+        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+
+        # Create the hashed password based on the minimum cost
+        BCrypt::Password.create(string, cost: cost)
+    end
+    
 end
