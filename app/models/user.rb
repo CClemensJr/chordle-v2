@@ -4,11 +4,11 @@ class User < ApplicationRecord
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
     validates :name, 
-              presence: true, 
+              presence:   true, 
               length:   { maximum: 50 }
 
     validates :email, 
-               presence:   true, 
+               presence:     true, 
                length:     { maximum: 200 }, 
                format:     { with: VALID_EMAIL_REGEX },
                uniqueness: { case_sensitive: false }
@@ -16,8 +16,9 @@ class User < ApplicationRecord
     has_secure_password
 
     validates :password, 
-              presence: true, 
-              length:   { minimum: 9 }
+              presence:  true, 
+              length:  { minimum: 9 },
+              allow_nil: true
 
     # Returns the hash digest of a string argument
     def User.digest(string)
