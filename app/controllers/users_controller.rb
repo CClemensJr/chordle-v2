@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def show
     @user = User.find(params[:id])
   end
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
 
   private
 
