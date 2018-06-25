@@ -3,7 +3,8 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = users(:ray)
+    @user       = users(:ray)
+    @other_user = users(:emma)
   end
 
 

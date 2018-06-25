@@ -2,3 +2,8 @@ ray:
   name:            Ray Liotta
   email:           ray@liotta.com
   password_digest: <%= User.digest('passworded') %>
+
+emma:
+  name:            Emma Stone
+  email:           emma@stone.com
+  password_digest: <%= User.digest('passworded') %>
