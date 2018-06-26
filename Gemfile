@@ -14,6 +14,7 @@ gem 'jbuilder',                   '2.7'
 group :development, :test do
   gem 'sqlite3',                  '1.3.13'
   gem 'byebug',                   '10.0.2', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker',                    '1.8.7'
 end
 
 group :development do
