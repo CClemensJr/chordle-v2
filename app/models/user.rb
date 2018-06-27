@@ -1,13 +1,13 @@
 class User < ApplicationRecord
     has_many :chores
-    
+     
     before_save { self.email = email.downcase } # email addresses are down cased by default to address case sensitivity
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
     validates :name, 
-              presence:   true, 
-              length:   { maximum: 50 }
+               presence:   true, 
+               length:   { maximum: 50 }
 
     validates :email, 
                presence:     true, 
@@ -18,9 +18,9 @@ class User < ApplicationRecord
     has_secure_password
 
     validates :password, 
-              presence:  true, 
-              length:  { minimum: 9 },
-              allow_nil: true
+               presence:  true, 
+               length:  { minimum: 9 },
+               allow_nil: true
 
     # Returns the hash digest of a string argument
     def User.digest(string)

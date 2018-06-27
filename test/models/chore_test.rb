@@ -16,8 +16,18 @@ class ChoreTest < ActiveSupport::TestCase
     assert_not @chore.valid?
   end
 
+  test "descriptions should not be more that 255 characters long" do
+    @chore.description = "a" * 256
+    assert_not @chore.valid?
+  end
+
   test "time to complete should be present" do
     @chore.time_to_complete = "   "
+    assert_not @chore.valid?
+  end
+
+  test "the time to complete should not be more than 15 characters long" do
+    @chore.time_to_complete = "1" * 16
     assert_not @chore.valid?
   end
 
