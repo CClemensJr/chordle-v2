@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :chores
+    
     before_save { self.email = email.downcase } # email addresses are down cased by default to address case sensitivity
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
