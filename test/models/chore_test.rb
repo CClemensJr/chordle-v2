@@ -22,7 +22,7 @@ class ChoreTest < ActiveSupport::TestCase
   end
 
   test "priority should be present" do
-    @chore.time_to_complete = "   "
+    @chore.priority = "   "
     assert_not @chore.valid?
   end
 
