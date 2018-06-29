@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :chores
+    has_many :chores, dependent: :destroy
      
     before_save { self.email = email.downcase } # email addresses are down cased by default to address case sensitivity
 
