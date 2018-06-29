@@ -4,7 +4,7 @@ class ChoreTest < ActiveSupport::TestCase
   
   def setup
     @user  = users(:ray)
-    @chore = Chore.new(description: "Wash dishes", time_to_complete: "30", priority: "High", user_id: @user.id)
+    @chore = @user.chores.build(description: "Wash dishes", time_to_complete: 30, priority: "High")
   end
   
   test "should be valid" do
@@ -22,12 +22,12 @@ class ChoreTest < ActiveSupport::TestCase
   end
 
   test "time to complete should be present" do
-    @chore.time_to_complete = "   "
+    @chore.time_to_complete = nil
     assert_not @chore.valid?
   end
 
-  test "the time to complete should not be more than 15 characters long" do
-    @chore.time_to_complete = "1" * 16
+  test "the time to complete should be an integer" do
+    @chore.time_to_complete = "a"
     assert_not @chore.valid?
   end
 
@@ -36,9 +36,18 @@ class ChoreTest < ActiveSupport::TestCase
     assert_not @chore.valid?
   end
 
+  test "priority should be High, Medium, or Low" do
+    @chore.priority = "priority"
+    assert_not @chore.valid?
+  end
+
   test "user id should be present" do
     @chore.user_id = nil
     assert_not @chore.valid?
+  end
+
+  test "chores should appear with the most recent first" do
+    assert_equal chores(:dust_furniture), Chore.first
   end
 
 end

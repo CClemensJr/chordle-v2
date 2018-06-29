@@ -1,7 +1,10 @@
 class Chore < ApplicationRecord
   belongs_to :user
-  validates  :description,      presence: true, length: { maximum: 255 }
-  validates  :time_to_complete, presence: true, length: { maximum: 15 }
-  validates  :priority,         presence: true
+
+  default_scope -> { order(created_at: :desc) }
+
   validates  :user_id,          presence: true
+  validates  :description,      presence: true, length: { maximum: 255 }
+  validates  :time_to_complete, presence: true, numericality: true
+  validates  :priority,         presence: true, inclusion: { in: %w(Low Medium High), message: "%{value} is not a valid priority level" }
 end

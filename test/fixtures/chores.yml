@@ -1,13 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  description: MyString
-  time_to_complete: 30 minutes
-  priority: MyString
-  user: one
+do_dishes:
+  description:      Wash the dishes
+  time_to_complete: 30
+  priority:         High
+  created_at:       <%= 10.minutes.ago %>
 
-two:
-  description: MyString
-  time_to_complete: 30 minutes
-  priority: MyString
-  user: two
+mow_lawn:
+  description:      Mow the lawn
+  time_to_complete: 45
+  priority:         Medium
+  created_at:       <%= 2.hours.ago %>
+
+dust_furniture:
+  description:      Dust the furniture
+  time_to_complete: 15
+  priority:         Low
+  created_at:       <%= Time.zone.now %>
+  
+pay_bills:
+  description:      Pay the bills
+  time_to_complete: 60
+  priority:         High
+  created_at:       <%= 3.days.ago %>
