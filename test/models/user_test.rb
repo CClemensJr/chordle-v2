@@ -73,4 +73,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 8
     assert_not @user.valid?
   end
+
+  test "associated chores should be destroyed" do
+    @user.save
+    @user.chores.create!(description: "Clean litter box", time_to_complete: 5, priority: "High")
+    assert_difference 'Chore.count', -1 do
+      @user.destroy
+    end
+  end
 end
