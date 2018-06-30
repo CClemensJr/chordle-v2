@@ -10,6 +10,16 @@
         </section>
     </aside>
     <main class="col-md-8">
-        <h1><%= @user.name %>'s Chores will go here</h1>
+        <% if @user.chores.any? %>
+            <h3>Chores (<%= @user.chores.count %>)</h3>
+
+            <ol class="chores">
+                <%= render @chores %>
+            </ol>
+
+            <%= will_paginate @chores %>
+        <% else %>
+            <%= link_to "Add a chore.", '#', class: "btn btn-primary" %>
+        <% end %>
     </main>
 </div>

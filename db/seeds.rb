@@ -14,3 +14,12 @@ User.create!(name:                  "Example User",
                  password:              password,
                  password_confirmation: password)
 end
+
+users = User.order(:created_at).take(5)
+50.times do
+   description      = Faker::Lorem.sentence(1)
+   priority         = ['High', 'Medium', 'Low'].sample
+   time_to_complete = [10, 15, 20, 25, 30, 45, 60, 120].sample 
+
+   users.each { |user| user.chores.create!(description: description, priority: priority, time_to_complete: time_to_complete) }
+end
