@@ -17,7 +17,7 @@ class ChoresControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect destroy when not logged in" do
     assert_no_difference "Chore.count" do
-      delete chores_path(@chore)
+      delete chore_path(@chore)
     end
 
     assert_redirected_to login_url
