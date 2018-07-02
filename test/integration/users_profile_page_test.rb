@@ -7,7 +7,7 @@ class UsersProfilePageTest < ActionDispatch::IntegrationTest
     @user = users(:ray)
   end
 
-  test "profile page display" do
+  test "profile page displays" do
     log_in_as(@user)
     get user_path(@user)
     assert_template 'users/show'

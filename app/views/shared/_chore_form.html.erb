@@ -1,0 +1,10 @@
+<%= form_for(@chore) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div class="field">
+        <%= f.text_area    :description,      placeholder: "Tell Chordle all about your chore..." %>
+        <%= f.text_field   :priority,         placeholder: "Tell Chordle how important this chore is..." %>
+        <%= f.number_field :time_to_complete, placeholder: "Tell Chordle how long it will take you..." %>
+    </div>
+    <%= f.submit "Create chore", class: "btn btn-primary" %>
+<% end %>
