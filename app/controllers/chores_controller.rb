@@ -11,16 +11,15 @@ class ChoresController < ApplicationController
     end
 
     def destroy
-        @chore = current_user.chores.find(chore_params)
-
-        if @chore.delete
-            flash[:success] = "Chordle removed a chore to your list!"
-            redirect_to current_user
-        end
+        @chore = Chore.find(params[:id])
+        @chore.destroy
+        flash[:success] = "Chordle removed a chore to your list!"
+        redirect_to current_user
     end
 
 
     private
+
 
     def chore_params
         params.require(:chore).permit(:description, :priority, :time_to_complete)

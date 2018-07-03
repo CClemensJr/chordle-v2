@@ -11,5 +11,5 @@
     <span class="timestamp">
         Added <%= time_ago_in_words(chore.created_at) %> ago.
     </span>
-    <%= link_to "Delete", %>
+    <%= link_to "Delete", chore, method: :delete, data: { confirm: "Are you sure?" } %>
 </li>
