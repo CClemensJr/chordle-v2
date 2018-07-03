@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user   = User.find(params[:id])
     @chores = @user.chores.paginate(page: params[:page])
-    @chore = current_user.chores.build
+    @chore  = current_user.chores.build
   end
   
 

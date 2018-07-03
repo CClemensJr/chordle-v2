@@ -6,14 +6,17 @@ class ChoresController < ApplicationController
 
         if @chore.save
             flash[:success] = "Chordle added a new chore to your list!"
-            redirect_to root_url
-        else
-            render 'static_pages/home'
+            redirect_to current_user
         end
     end
 
     def destroy
+        @chore = current_user.chores.find(chore_params)
 
+        if @chore.delete
+            flash[:success] = "Chordle removed a chore to your list!"
+            redirect_to current_user
+        end
     end
 
 
