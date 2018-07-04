@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user   = User.find(params[:id])
     @chores = @user.chores.paginate(page: params[:page])
     @chore  = current_user.chores.build
+    @chordle_says = Chore.complete_this_chore
   end
   
 
