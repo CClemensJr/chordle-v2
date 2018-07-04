@@ -1,15 +1,15 @@
 <li id="chore-<%= chore.id %>">
-    <%= link_to gravatar_for(chore.user, size: 50), chore.user %>
-    <span class="user"><%= link_to chore.user.name, chore.user %></span>
-    <h4 class="description"><%= chore.description %></h4>
+    <%# link_to gravatar_for(chore.user, size: 50), chore.user %>
+    <!--span class="user"><%# link_to chore.user.name, chore.user %></span-->
+    <h3 class="description"><%= chore.description %></h3>
     <span class="priority">
         <b>Priority level:</b> <%= chore.priority %>
     </span>
     <span class="time_to_complete">
         <b>Estimated time needed to complete this chore:</b> <%= chore.time_to_complete %> minutes
     </span>
-    <span class="timestamp">
-        Added <%= time_ago_in_words(chore.created_at) %> ago.
-    </span>
+    <!--span class="timestamp">
+        Added <%# time_ago_in_words(chore.created_at) %> ago.
+    </span-->
     <%= link_to "Delete", chore, method: :delete, data: { confirm: "Are you sure?" } %>
 </li>
