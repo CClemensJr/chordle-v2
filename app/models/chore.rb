@@ -8,7 +8,10 @@ class Chore < ApplicationRecord
   validates  :time_to_complete, presence: true, numericality: true
   validates  :priority,         presence: true, inclusion: { in: %w(Low Medium High), message: "%{ value } is not a valid priority level" }
 
-  def self.complete_this_chore
-    Chore.order("RANDOM()").first.description if Chore
-  end
+  #def self.complete_this_chore(user)
+    #Chore.order("RANDOM()").first.description if Chore
+  #  if Chore.any?
+  #    this_chore = Chore.unscoped.where(user: user).order("RANDOM()").first
+  #  end
+  #end
 end
