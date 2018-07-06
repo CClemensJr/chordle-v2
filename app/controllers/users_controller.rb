@@ -12,7 +12,16 @@ class UsersController < ApplicationController
     @chores = @user.chores.paginate(page: params[:page])
     @chore  = current_user.chores.build
     #@chordle_says = Chore.complete_this_chore(current_user).description
-    @chordle_says = current_user.chores.sample.description
+    
+    current_user.chores.each do |chore|
+      if current_user.chores.priority.any? == 'High'
+        @chordle_says = current_user.chores.sample.description
+      elsif current_user.chores.priority.any? == 'Medium'
+        @chordle_says = current_user.chores.sample('Medium').description
+      else
+        @chordle_says = current_user.chores.sample('Low').description
+      end
+    end
   end
   
 
