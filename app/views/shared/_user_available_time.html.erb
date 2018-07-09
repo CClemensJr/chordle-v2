@@ -1,0 +1,7 @@
+<%= form_tag({ controller: "users", action: "show" }, method: "post") do %>
+    <%#= render 'shared/error_messages', object: f.object %>
+
+    <div class="field">
+        <%= select_tag "available_time", options_for_select([5, 10, 15, 20, 25, 30, 45, 60, 75, 90, 120]), prompt: "How many minutes do you have?" %>
+    </div>
+<% end %>

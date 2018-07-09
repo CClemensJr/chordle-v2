@@ -11,14 +11,16 @@ class UsersController < ApplicationController
     @user   = User.find(params[:id])
     @chores = @user.chores.paginate(page: params[:page])
     @chore  = current_user.chores.build
+    @available_time = params[:available_time]
     
+
     if current_user.chores.where(priority: "High").any?
       #Return a random chore with a priority level of High
-      @chordle_says = current_user.chores.where(priority: "High").sample.description
+      @chordle_says = current_user.chores.where(["priority = ? and time_to_complete <= ?", "High", "@available_time" ]).sample.description
     elsif current_user.chores.where(priority: "Medium").any?
       #Return a random chore with a priority level of Medium
-      @chordle_says = current_user.chores.where(priority: "Medium").sample.description
-    elsif current_user.chores.where(priority: "Low").any?
+      @chordle_says = current_user.chores.where(["priority = ? and time_to_complete <= ?", "Medium", "@available_time" ]).sample.description
+    elsif current_user.chores.where(["priority = ? and time_to_complete <= ?", "Low", "@available_time" ]).any?
       #Return a random chore with a priority level of Low
       @chordle_says = current_user.chores.where(priority: "Low").sample.description
     else
