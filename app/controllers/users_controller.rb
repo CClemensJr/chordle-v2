@@ -10,25 +10,12 @@ class UsersController < ApplicationController
   def show
     @user           = User.find(params[:id])
     @chores         = @user.chores.paginate(page: params[:page])
-    @chore          = current_user.chores.build
+    @chore          = current_user.chores.build#(chore_params)
     @available_time = params[:available_time]
     #collect tasks with available time, order by priority, and take the top priority results
     if current_user.chores.any?
-      @chordle_says   = current_user.chores.where("time_to_complete <= ?", @available_time)
-                                    .order(priority: :asc).first.description
+      @chordle_says   = current_user.chores.where("time_to_complete <= ?", @available_time).order(priority: :asc).first#.description
     end
-    #if current_user.chores.where(priority: "High").any?
-      #Return a random chore with a priority level of High
-    #  @chordle_says = current_user.chores.where(["priority = ? and time_to_complete <= ?", "High", @available_time]).sample.description
-    #elsif current_user.chores.where(priority: "Medium").any?
-      #Return a random chore with a priority level of Medium
-    #  @chordle_says = current_user.chores.where(["priority = ? and time_to_complete <= ?", "Medium", @available_time ]).sample.description
-    #elsif current_user.chores.where(["priority = ? and time_to_complete <= ?", "Low", @available_time ]).any?
-      #Return a random chore with a priority level of Low
-     # @chordle_says = current_user.chores.where(priority: "Low").sample.description
-    #else
-     # @chordle_says = "Give me a chore first!"
-    #end =end
   end
   
 

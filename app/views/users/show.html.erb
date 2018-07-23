@@ -11,7 +11,7 @@
         <section class="chore_form">
             <%= render 'shared/chore_form' %>
             <%= render 'shared/user_available_time' %>
-            <%= link_to 'Receive a chore', '#', class: "btn btn-warning chore-button", data: { confirm: ("Chordle says: #{ @chordle_says } #{ @available_time } ") } %>
+            <%= link_to 'Receive a chore', '#', class: "btn btn-warning chore-button", data: { confirm: ("Chordle says: #{ @chordle_says } ") } %>
         </section>
     </aside>
     <main class="col-md-8">
