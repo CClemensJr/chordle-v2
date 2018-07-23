@@ -12,8 +12,11 @@ class UsersController < ApplicationController
     @chores         = @user.chores.paginate(page: params[:page])
     @chore          = current_user.chores.build
     @available_time = params[:available_time]
-    @chordle_says   = current_user.chores.
-    
+    #collect tasks with available time, order by priority, and take the top priority results
+    if current_user.chores.any?
+      @chordle_says   = current_user.chores.where("time_to_complete <= ?", @available_time)
+                                    .order(priority: :asc).first.description
+    end
     #if current_user.chores.where(priority: "High").any?
       #Return a random chore with a priority level of High
     #  @chordle_says = current_user.chores.where(["priority = ? and time_to_complete <= ?", "High", @available_time]).sample.description
