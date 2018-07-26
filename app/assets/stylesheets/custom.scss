@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Orbitron|Roboto+Mono');
 
 /* variables */
 $dark-gray:  #555;
@@ -7,6 +8,17 @@ $light-gray: #777;
 $white:      #fff;
 $off-white:  #eaeaea;
 $brown:      #222;
+
+$neon_blue: #0AB9E6;
+$dark_neon_blue: #05586d;
+$neon_red: #FF3C28;
+$neon_green: #1EDC00;
+$neon_yellow: #E6FF00;
+$chorebot_yellow: #fdd936;
+$neon_pink: #FF3278;
+$mario_red: #E10F00;
+$grey: #989898;
+$dark_grey: #414548;
 
 @mixin box-sizing {
   -moz-box-sizing:    border-box;
@@ -67,22 +79,38 @@ p {
 
 /* header */
 
+.navbar {
+  background-color: $neon_blue;
+}
+
 #logo {
   float: left;
   margin-right:    10px;
   font-size:       1.7em;
-  color:          $white;
+  color:          $neon_pink;
   text-transform:  uppercase;
   letter-spacing: -1px;
   padding-top:     9px;
   font-weight:     bold;
+  font-family: 'Do Hyeon', sans-serif;
 }
 
 #logo:hover {
-  color:          $white;
+  color:          $neon_green;
   text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
 }
 
+#navbar-links li a {
+  color:  $neon_yellow;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#navbar-links li a:hover {
+  color:  $neon_green;
+  font-size: 1.7em;
+  font-weight: bold;
+}
 
 /* footer */
 
