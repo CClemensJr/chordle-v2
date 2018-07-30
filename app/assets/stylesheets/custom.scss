@@ -2,7 +2,10 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Orbitron|Roboto+Mono');
 
-/* variables */
+/******************************* 
+** variables
+*/
+
 $dark-gray:  #555;
 $light-gray: #777;
 $white:      #fff;
@@ -26,7 +29,9 @@ $dark_grey: #414548;
   box-sizing:         border-box;
 }
 
-/* universal */
+/**************************
+** universal 
+*/
 
 body {
   padding-top: 60px;
@@ -49,7 +54,9 @@ textarea {
 }
 
 
-/* typography */
+/*****************************
+** typography 
+*/
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -77,7 +84,9 @@ p {
 }
 
 
-/* header */
+/*********************************
+** header 
+*/
 
 .navbar {
   background-color: $neon_blue;
@@ -86,33 +95,35 @@ p {
 #logo {
   float: left;
   margin-right:    10px;
-  font-size:       1.7em;
+  font-size:       2em;
   color:          $neon_pink;
   text-transform:  uppercase;
   letter-spacing: -1px;
   padding-top:     9px;
   font-weight:     bold;
-  font-family: 'Do Hyeon', sans-serif;
+  font-family:    'Do Hyeon', sans-serif;
 }
 
 #logo:hover {
-  color:          $neon_green;
+  color:          $neon_yellow;
   text-decoration: none;
-  font-family: 'Orbitron', sans-serif;
+  font-family:    'Roboto Mono', monospace;
 }
 
 #navbar-links li a {
-  color:  $neon_yellow;
+  color:       $neon_yellow;
   font-family: 'Roboto Mono', monospace;
 }
 
 #navbar-links li a:hover {
-  color:  $neon_green;
   font-size: 1.7em;
   font-weight: bold;
+  text-decoration: underline overline $neon_pink;
 }
 
-/* footer */
+/******************************
+** footer 
+*/
 
 footer {
   margin-top:  45px;
@@ -141,7 +152,22 @@ footer {
 }
 
 
-/*  Misc */
+/********************************
+** Home Page
+*/
+
+.jumbo-img {
+  background-image:  url("chorebot_home.svg");
+  background-repeat: no-repeat;
+  background-size:   contain;
+}
+
+
+
+/********************************
+** Misc 
+*/
+
 .debug_dump {
   clear:      both;
   float:      left;
@@ -152,7 +178,9 @@ footer {
 }
 
 
-/* sidebar */
+/*******************************
+** sidebar 
+*/
 
 aside {
   section.user_info {
@@ -190,7 +218,9 @@ aside {
 }
 
 
-/* forms */
+/*********************************
+** forms 
+*/
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -218,7 +248,10 @@ ul {
 
 
 
-/* Users index */
+/*************************************
+** Users index 
+*/
+
  .users {
    list-style: none;
    margin: 0;
@@ -231,7 +264,9 @@ ul {
  }
 
 
- /* chores */
+ /*************************************** 
+ ** chores 
+ */
 
 .chores {
   list-style: none;
