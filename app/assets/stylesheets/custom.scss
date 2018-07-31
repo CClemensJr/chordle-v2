@@ -166,7 +166,25 @@ footer {
 */
 
 .jumbotron {
+  background-color: $neon_green;
   font-family: 'Press Start 2P', cursive;
+  color: $neon_pink;
+}
+
+h2 {
+  color: $dark-grey;
+}
+
+.btn-home {
+  background-color: $neon_blue;
+  color: $neon_yellow;
+  border: 2px solid $neon_yellow;
+}
+
+.btn-home:hover {
+  background-color: $neon_yellow;
+  color: $neon_pink;
+  border: 2px solid $neon_pink;
 }
 
 /*.jumbotron img {
