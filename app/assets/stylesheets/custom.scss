@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Orbitron|Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Geostar|Geostar+Fill|Plaster|Press+Start+2P|Squada+One|Stalinist+One');
 
 /******************************* 
 ** variables
@@ -32,6 +33,14 @@ $dark_grey: #414548;
 /**************************
 ** universal 
 */
+
+  //font-family:    'Do Hyeon', sans-serif;
+  //font-family: 'Squada One', cursive;
+  //font-family: 'Stalinist One', cursive;
+  //font-family: 'Press Start 2P', cursive;
+  //font-family: 'Plaster', cursive;
+  //font-family: 'Geostar Fill', cursive;
+  //font-family: 'Geostar', cursive;
 
 body {
   padding-top: 60px;
@@ -156,11 +165,21 @@ footer {
 ** Home Page
 */
 
+.jumbotron {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/*.jumbotron img {
+  width: ;
+}
+
 .jumbo-img {
   background-image:  url("chorebot_home.svg");
   background-repeat: no-repeat;
-  background-size:   contain;
-}
+  //background-size:   cover;
+  background-size: 100% 100%;
+  background-position: right top;
+}*/
 
 
 
