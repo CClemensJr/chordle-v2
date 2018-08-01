@@ -204,10 +204,69 @@ h3 {
 
 
 /********************************
-** Contact Page
+** Signup Page
 */
 
+.signup-heading {
+  color: $neon_green;
+  font-family: 'Press Start 2P', cursive;
+}
 
+.signup-page label {
+  color: $dark_grey;
+  font-family: 'Roboto Mono', monospace; 
+}
+
+.signup-page .btn {
+  background-color: $neon_blue;
+  color: $neon_yellow;
+  border: 2px solid $neon_yellow;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.signup-page .btn:hover {
+  background-color: $neon_yellow;
+  color: $neon_pink;
+  border: 2px solid $neon_pink;
+}
+
+
+/********************************
+** Login Page
+*/
+
+.login-page h1 {
+  color: $neon_yellow;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.login-page label {
+  color: $dark_grey;
+  font-family: 'Roboto Mono', monospace; 
+}
+
+.login-page p {
+  color: $dark_grey;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 0.8em;
+}
+
+.login-page p a {
+  color: $neon_blue;
+}
+
+.login-page .btn {
+  background-color: $neon_green;
+  color: $neon_pink;
+  border: 2px solid $neon_pink;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.login-page .btn:hover {
+  background-color: $neon_blue;
+  color: $neon_green;
+  border: 2px solid $neon_green;
+}
 
 
 /********************************
