@@ -187,17 +187,19 @@ h2 {
   border: 2px solid $neon_pink;
 }
 
-/*.jumbotron img {
-  width: ;
+h3 {
+  text-align: center;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 2em;
 }
 
-.jumbo-img {
-  background-image:  url("chorebot_home.svg");
-  background-repeat: no-repeat;
-  //background-size:   cover;
-  background-size: 100% 100%;
-  background-position: right top;
-}*/
+.panel-heading {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.panel-body {
+  font-family: 'Roboto Mono', monospace;
+}
 
 
 
