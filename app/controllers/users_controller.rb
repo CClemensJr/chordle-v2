@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @available_time = params[:available_time]
     #collect tasks with available time, order by priority, and take the top priority results
     if current_user.chores.any?
-      @chordle_says   = current_user.chores.where("time_to_complete <= ?", @available_time).order(priority: :asc).first#.description
+      @chordle_says = current_user.chores.where("time_to_complete <= ?", @available_time).order(priority: :asc).first#.description
     end
   end
   

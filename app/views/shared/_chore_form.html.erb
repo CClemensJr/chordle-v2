@@ -3,7 +3,7 @@
 
     <div class="field">
         <%= f.text_area    :description,      placeholder: "Tell Chordle all about your chore..." %>
-        <%= f.text_field   :priority,         placeholder: "And is this chore a High, Medium, or Low priority?" %>
+        <%= f.text_field   :priority,         placeholder: "And is this chore a 1-High, 2-Medium, or 3-Low priority?" %>
         <%= f.number_field :time_to_complete, placeholder: "How many minutes do you think it will take you?" %>
     </div>
     <%= f.submit "Create chore", class: "btn btn-primary" %>

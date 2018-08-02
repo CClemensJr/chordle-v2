@@ -6,7 +6,7 @@ class Chore < ApplicationRecord
   validates  :user_id,          presence: true
   validates  :description,      presence: true, length: { maximum: 255 }
   validates  :time_to_complete, presence: true, numericality: true
-  validates  :priority,         presence: true, inclusion: { in: %w(Low Medium High), message: "%{ value } is not a valid priority level" }
+  validates  :priority,         presence: true, inclusion: { in: %w(3-Low 2-Medium 1-High), message: "%{ value } is not a valid priority level" }
 
   #def self.complete_this_chore(user)
     #Chore.order("RANDOM()").first.description if Chore
