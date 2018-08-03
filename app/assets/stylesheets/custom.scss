@@ -1,12 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Orbitron|Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Geostar|Geostar+Fill|Plaster|Press+Start+2P|Squada+One|Stalinist+One');
 
-/* variables */
+/******************************* 
+** variables
+*/
+
 $dark-gray:  #555;
 $light-gray: #777;
 $white:      #fff;
 $off-white:  #eaeaea;
 $brown:      #222;
+
+$neon_blue: #0AB9E6;
+$dark_neon_blue: #05586d;
+$neon_red: #FF3C28;
+$neon_green: #1EDC00;
+$neon_yellow: #E6FF00;
+$chorebot_yellow: #fdd936;
+$neon_pink: #FF3278;
+$mario_red: #E10F00;
+$grey: #989898;
+$dark_grey: #414548;
 
 @mixin box-sizing {
   -moz-box-sizing:    border-box;
@@ -14,7 +30,17 @@ $brown:      #222;
   box-sizing:         border-box;
 }
 
-/* universal */
+/**************************
+** universal 
+*/
+
+  //font-family:    'Do Hyeon', sans-serif;
+  //font-family: 'Squada One', cursive;
+  //font-family: 'Stalinist One', cursive;
+  //font-family: 'Press Start 2P', cursive;
+  //font-family: 'Plaster', cursive;
+  //font-family: 'Geostar Fill', cursive;
+  //font-family: 'Geostar', cursive;
 
 body {
   padding-top: 60px;
@@ -37,7 +63,9 @@ textarea {
 }
 
 
-/* typography */
+/*****************************
+** typography 
+*/
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -65,26 +93,46 @@ p {
 }
 
 
-/* header */
+/*********************************
+** header 
+*/
+
+.navbar {
+  background-color: $neon_blue;
+}
 
 #logo {
   float: left;
   margin-right:    10px;
-  font-size:       1.7em;
-  color:          $white;
+  font-size:       2em;
+  color:          $neon_pink;
   text-transform:  uppercase;
   letter-spacing: -1px;
   padding-top:     9px;
   font-weight:     bold;
+  font-family:    'Do Hyeon', sans-serif;
 }
 
 #logo:hover {
-  color:          $white;
+  color:          $neon_yellow;
   text-decoration: none;
+  font-family:    'Roboto Mono', monospace;
 }
 
+#navbar-links li a {
+  color:       $neon_yellow;
+  font-family: 'Roboto Mono', monospace;
+}
 
-/* footer */
+#navbar-links li a:hover {
+  font-size: 1.7em;
+  font-weight: bold;
+  text-decoration: underline overline $neon_pink;
+}
+
+/******************************
+** footer 
+*/
 
 footer {
   margin-top:  45px;
@@ -113,7 +161,118 @@ footer {
 }
 
 
-/*  Misc */
+/********************************
+** Home Page
+*/
+
+.jumbotron {
+  background-color: $neon_green;
+  font-family: 'Press Start 2P', cursive;
+  color: $neon_pink;
+}
+
+h2 {
+  color: $dark-grey;
+}
+
+.btn-home {
+  background-color: $neon_blue;
+  color: $neon_yellow;
+  border: 2px solid $neon_yellow;
+}
+
+.btn-home:hover {
+  background-color: $neon_yellow;
+  color: $neon_pink;
+  border: 2px solid $neon_pink;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 2em;
+}
+
+.panel-heading {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.panel-body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+
+
+/********************************
+** Signup Page
+*/
+
+.signup-heading {
+  color: $neon_green;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.signup-page label {
+  color: $dark_grey;
+  font-family: 'Roboto Mono', monospace; 
+}
+
+.signup-page .btn {
+  background-color: $neon_blue;
+  color: $neon_yellow;
+  border: 2px solid $neon_yellow;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.signup-page .btn:hover {
+  background-color: $neon_yellow;
+  color: $neon_pink;
+  border: 2px solid $neon_pink;
+}
+
+
+/********************************
+** Login Page
+*/
+
+.login-page h1 {
+  color: $neon_yellow;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.login-page label {
+  color: $dark_grey;
+  font-family: 'Roboto Mono', monospace; 
+}
+
+.login-page p {
+  color: $dark_grey;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 0.8em;
+}
+
+.login-page p a {
+  color: $neon_blue;
+}
+
+.login-page .btn {
+  background-color: $neon_green;
+  color: $neon_pink;
+  border: 2px solid $neon_pink;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.login-page .btn:hover {
+  background-color: $neon_blue;
+  color: $neon_green;
+  border: 2px solid $neon_green;
+}
+
+
+/********************************
+** Misc 
+*/
+
 .debug_dump {
   clear:      both;
   float:      left;
@@ -124,7 +283,9 @@ footer {
 }
 
 
-/* sidebar */
+/*******************************
+** sidebar 
+*/
 
 aside {
   section.user_info {
@@ -162,7 +323,9 @@ aside {
 }
 
 
-/* forms */
+/*********************************
+** forms 
+*/
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -190,7 +353,10 @@ ul {
 
 
 
-/* Users index */
+/*************************************
+** Users index 
+*/
+
  .users {
    list-style: none;
    margin: 0;
@@ -203,7 +369,9 @@ ul {
  }
 
 
- /* chores */
+ /*************************************** 
+ ** chores 
+ */
 
 .chores {
   list-style: none;
